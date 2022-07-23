@@ -1,0 +1,28 @@
+{
+  "current": {
+    "sections": {
+      "header": {
+        "type": "header",
+        "settings": {
+        }
+      },
+      "1658515051b1f13c32": {
+        "type": "hero",
+        "settings": {
+          "image": "shopify:\/\/shop_images\/maria-orlova-Ys8VpdbIYxE-unssplash.jpg",
+          "title": "Ketta Skin Beauty",
+          "description": "<p><em>A new philosophy of skincare.<\/em><\/p>",
+          "button_label": "Shop Now",
+          "button_link": ""
+        }
+      }
+    },
+    "content_for_index": [
+      "1658515051b1f13c32"
+    ]
+  },
+  "presets": {
+    "Default": {
+    }
+  }
+}
