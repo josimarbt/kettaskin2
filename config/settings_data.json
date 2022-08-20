@@ -15,10 +15,18 @@
           "button_label": "Shop Now",
           "button_link": ""
         }
+      },
+      "1660937399c715dbc8": {
+        "type": "featured-collection",
+        "settings": {
+          "featured_collection": "ketta-skin-products",
+          "title": "Featured Collection"
+        }
       }
     },
     "content_for_index": [
-      "1658515051b1f13c32"
+      "1658515051b1f13c32",
+      "1660937399c715dbc8"
     ]
   },
   "presets": {
