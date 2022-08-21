@@ -15,19 +15,22 @@
 
       {% form 'product', product, class:"product-form", id:"AddToCartForm" %}
          <div class="mb-3">
-           <select name="id" class="form-select" id="productSelect">
+          <!-- {% assign variants_size = product.variants | size %} 
+          {% if variants_size > 1 %} -->
+            <select name="id" class="form-select" id="productSelect"> 
               {% for variant in product.variants %}
-                 {% if variant.available %}
-                    <option value="{{ variant.id }}">
-                      {{ variant.title }}
-                    </option>
-                  {% else %}
-                    <option value="{{ variant.id }}" disabled="disabled">
-                      {{ variant.title }}
-                    </option>
-                 {% endif %}
+                    {% if variant.available %}
+                        <option value="{{ variant.id }}">
+                          {{ variant.title }}
+                        </option>
+                      {% else %}
+                        <option value="{{ variant.id }}" disabled="disabled">
+                          {{ variant.title }}
+                        </option>
+                    {% endif %}
               {% endfor %}
-           </select>
+            </select>
+          <!-- {% endif %} -->
          </div>
          <div class="mb-3">
             <input type="number" name="quantity" class="form-control" id="Quantity" value="1" min="1">
