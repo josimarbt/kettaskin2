@@ -27,7 +27,7 @@
                         <td>
                           <a href="{{ item.url }}">{{ item.product.title }}</a>
                           <!-- {% if variant_size > 1 %} -->
-                            <p class="small">{{ item.variants.title }}</p>
+                            <p class="small">{{ item.variant.title }}</p>
                           <!-- {% endif %}   -->
                           <a href="/cart/change?line={{ forloop.index }}&amp;quantity=0">remove</a>
                         </td>
