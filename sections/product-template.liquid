@@ -15,8 +15,6 @@
 
       {% form 'product', product, class:"product-form", id:"AddToCartForm" %}
          <div class="mb-3">
-          {% assign variants_size = product.variants | size %} 
-          <!-- {% if variants_size > 1 %} -->
             <select name="id" class="form-select" id="productSelect"> 
               {% for variant in product.variants %}
                     {% if variant.available %}
@@ -30,7 +28,6 @@
                     {% endif %}
               {% endfor %}
             </select>
-          <!-- {% endif %} -->
          </div>
          <div class="mb-3">
             <input type="number" name="quantity" class="form-control" id="Quantity" value="1" min="1">

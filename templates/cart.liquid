@@ -17,7 +17,6 @@
                   </thead>
                   <tbody>
                     {% for item in cart.items %}
-                    {% assign variant_size = item.product.variants | size %}
                       <tr>
                         <td>
                           <a href="{{ item.url | within: collections.all }}">
@@ -26,9 +25,7 @@
                         </td>
                         <td>
                           <a href="{{ item.url }}">{{ item.product.title }}</a>
-                          <!-- {% if variant_size > 1 %} -->
-                            <p class="small">{{ item.variant.title }}</p>
-                          <!-- {% endif %}   -->
+                          <p class="small">{{ item.variant.title }}</p>
                           <a href="/cart/change?line={{ forloop.index }}&amp;quantity=0">remove</a>
                         </td>
                         <td>{{ item.price | money }}</td>
@@ -55,7 +52,7 @@
                 <div class="d-grid gap-2">
                     <button type="submit" name="update" class="btn btn-primary">Update</button>
                     <button type="submit" name="checkout" class="btn btn-primary">Checkout</button>
-                </div>
+                </div> 
               </div>
             </div>
           </div>
