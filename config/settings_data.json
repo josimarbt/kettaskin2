@@ -22,6 +22,49 @@
           "featured_collection": "ketta-skin-products",
           "title": "Featured Collection"
         }
+      },
+      "footer-section": {
+        "type": "footer-section",
+        "blocks": {
+          "76c4b1fd-fe84-4164-bdc0-2d8fa38a52f6": {
+            "type": "text",
+            "settings": {
+              "logo": "shopify:\/\/shop_images\/Rhode_Skin_Logo-removebg-preview.png",
+              "title": "Store Information",
+              "description": "<p><em>Gurruchaga 2266, Palermo<\/em><\/p><p><em>Buenos Aires, Argentina<\/em><\/p><p><strong>Contact mail:<\/strong> kettaskin@gmail.com<\/p><p><strong>Number:<\/strong> +54 1173635342<\/p>"
+            }
+          },
+          "fc786077-0ab4-4011-af11-95873058549b": {
+            "type": "link_list",
+            "settings": {
+              "title": "Quick Links",
+              "menu": "main-menu"
+            }
+          },
+          "9c430667-bf7d-4d6a-bf55-f0f0855d91f0": {
+            "type": "link_list",
+            "settings": {
+              "title": "Quick Links",
+              "menu": "footer"
+            }
+          },
+          "9a3b9f09-a447-4e93-a9f4-aac30e06f72b": {
+            "type": "link_list",
+            "settings": {
+              "title": "Quick Links",
+              "menu": "main-menu"
+            }
+          }
+        },
+        "block_order": [
+          "76c4b1fd-fe84-4164-bdc0-2d8fa38a52f6",
+          "fc786077-0ab4-4011-af11-95873058549b",
+          "9c430667-bf7d-4d6a-bf55-f0f0855d91f0",
+          "9a3b9f09-a447-4e93-a9f4-aac30e06f72b"
+        ],
+        "settings": {
+          "col_num": 4
+        }
       }
     },
     "content_for_index": [
