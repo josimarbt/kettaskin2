@@ -15,10 +15,13 @@
 
 <div class="container my-5">
   <div class="row justify-content-center">
+    {%- comment -%}
+      THIS COLUMN IS FOR THE CONTENT AND COMMENTS SECTION
+    {%- endcomment -%}
     <div class="col-12 col-md-8">
       <div>{{ article.content }}</div>
 
-      <div class="comment-section py-5">
+      <div class="comment-section" style="padding-top: 100px;">
         {% if blog.comments_enabled? %}
         <h3>{{ number_of_comments }} comment{% if number_of_comments > 1 %}s{% endif %}</h3>
         {% paginate article.comments by 5 %}
@@ -67,6 +70,10 @@
       {% endif %}
       </div>
     </div>
+    {%- comment -%}
+    THIS COLUMN IS FOR THE SIDEBAR
+    {%- endcomment -%}
+    <div class="col-12 col-md-4">{% section 'sidebar' %}</div>
   </div>
 </div>
 
