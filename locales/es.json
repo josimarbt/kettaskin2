@@ -1,0 +1,8 @@
+{
+    "general": {
+      "404": {
+        "title": "Error",
+        "subtext_html": "No pudimos encontrar la página que buscas o no existe"
+      }
+    }
+  }
