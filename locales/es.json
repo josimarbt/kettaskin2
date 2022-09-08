@@ -8,7 +8,15 @@
         "account_text": "Cuenta",
         "login_text": "Inicia Sesion",
         "register_text": "Registrate",
-        "logout_text": "Cerrar Sesion"
+        "logout_texts": "Cerrar Sesion"
+      },
+      "Navbar": {
+        "li_home_text": "Inicio",
+        "li_catalog_text": "Catalogo",
+        "li_contact_text": "Contacto",
+        "li_about-us_text": "Acerca de",
+        "li_blog_text": "Blog",
+        "li_cart_text": "Carrito"
       }
     }
-  } 
+} 

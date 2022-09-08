@@ -8,7 +8,15 @@
       "account_text": "Account",
       "login_text": "Log In",
       "register_text": "Register",
-      "logout_text": "Log Out"
+      "logout_text": "Logout"
+    },
+    "Navbar": {
+      "li_home_text": "Home",
+      "li_catalog_text": "Catalog",
+      "li_contact_text": "Contact",
+      "li_about-us_text": "About Us",
+      "li_blog_text": "Blog",
+      "li_cart_text": "Cart"
     }
   }
 }   

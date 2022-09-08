@@ -15,7 +15,7 @@
            <li class="nav-item">
              <a class="nav-link" href="{{ childlink.url }}">{{ childlink.title | escape }}</a>
            </li>
-        {% endfor %}]
+        {% endfor %}
         {% else %}
            <li class="nav-item">
              <a class="nav-link" href="{{ link.url }}">{{ link.title }}</a>
@@ -26,25 +26,28 @@
           <a class="nav-link" href="/cart">Cart</a>
        </li>
     </ul>
+    <form action="/search" method="GET" role="search">
+      <input type="text" name="q" value="{{ search.terms | escape }}" class="rounded p-1 small mx-4" placeholder="Search">
+    </form>
     <ul class="navbar-nav">
       {% if shop.customer_accounts_enabled %}
         {% if customer %}
-          <li class="nav-item">
-            <a href="{{ routes.account_url }}">{{ 'general.Layout.account_text' | t }}</a>
+          <li class="nav-item px-3">
+            <a class="nav-link" style="font-weight: 500; color: #0e9594;" href="{{ routes.account_url }}">{{ 'general.Layout.account_text' | t }}</a>
           </li>
           <li class="nav-item">
-            <a href="{{ routes.account_logout_url }}">{{ 'general.Layout.logout_text' | t }}</a>
+            <a class="nav-link" style="font-weight: 500; color: #0e9594;" href="{{ routes.account_logout_url }}">{{ 'general.Layout.logout_text' | t }}</a>
           </li>
         {% else %}
+          <li class="nav-item px-3">
+            <a class="nav-link" style="font-weight: 500; color: #0e9594;" href="{{ routes.account_login_url }}">{{ 'general.Layout.login_text' | t }}</a>
+          </li>
           <li class="nav-item">
-            <a href="{{ routes.account_login_url }}">{{ 'general.Layout.login_text' | t }}</a>
+            <a class="nav-link" style="font-weight: 500; color: #0e9594;" href="{{ routes.account_register_url }}">{{ 'general.Layout.register_text' | t }}</a>
           </li>
         {% endif %}
       {% endif %} 
     </ul>
-    <form action="/search" method="GET" role="search">
-      <input type="text" name="q" value="{{ search.terms | escape }}">
-    </form>
    </div>
   </div>
 </nav>
