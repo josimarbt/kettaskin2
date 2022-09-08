@@ -20,5 +20,7 @@
   </main>
 
   {% section 'footer-section' %}
+
+  {{ 'application.js' | asset_url | script_tag }}
 </body>
 </html>
