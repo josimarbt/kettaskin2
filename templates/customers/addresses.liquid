@@ -7,6 +7,14 @@
             <div class="col">
                 <div class="card">
                     <div class="card-body">{{ address | format_address }}</div>
+                    <div class="card-footer">
+                        <form action="/account/addresses/{{ address.id }}"
+                              method="post"
+                              data-confirm-message="Delete Address">
+                            <input type="hidden" name="_method" value="delete">
+                            <button class="btn btn-danger">Delete</button>
+                        </form>
+                    </div>
                 </div>
             </div>
         {% endfor %}
@@ -44,16 +52,16 @@
                     </div>
                     <div class="row mb-3">
                         <div class="col-12 col-md-4 mb-3">
-                            <label id="AddressCityNew" for="AddressCityNew" class="form-label">City</label>
+                            <label for="AddressCityNew" class="form-label">City</label>
                             <input id="AddressCityNew" type="text" name="address[city]" value="{{ form.city }}" class="form-control">
                         </div>
                         <div class="col-12 col-md-4 mb-3">
-                            <label id="AddressCountryNew" for="AddressCountryNew" class="form-label">Country</label>
+                            <label for="AddressCountryNew" class="form-label">Country</label>
                             <select id="AddressCountryNew" name="address[country]" class="form-control">{{ all_country_option_tags }}</select>
                         </div>
                         <div class="col-12 col-md-4 mb-3">
-                            <label id="AddressProvinceNew" for="AddressProvinceNew" class="form-label">Province</label>
-                            <select id="AddressProvinceNew" name="address[province]" class="form-control"></select>
+                            <label for="AddressProvinceNew" class="form-label">Province</label>
+                            <select id="AddressProvinceNew" name="address[province]" class="form-control" disabled="disabled"></select>
                         </div>
                     </div>
                     <div class="col-12 mb-3">
