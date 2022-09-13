@@ -10,15 +10,17 @@
   {{ content_for_header }} <!-- Header hook for plugins -->
   {{ 'custom-styles.css' | asset_url | stylesheet_tag }}
   {{ 'bootstrap.min.css' | asset_url | stylesheet_tag }}
+  {{ 'font-styles.css' | asset_url | stylesheet_tag }}
 </head>
 <body>
 
-  {% section 'translation' %}
   {% section 'header' %}
 
   <main role="main">
     {{ content_for_layout }}
   </main>
+
+  {% section 'translation' %}
 
   {% section 'footer-section' %}
 </body>

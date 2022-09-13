@@ -1,5 +1,5 @@
 {% form 'localization', id: 'localization_form_tag', class: 'dropup' %}
-    <div class="localeBtn">{{ 'globoterr.png' | asset_img_url: 'master' | img_tag }}</div>
+    <div class="localeBtn">{% render 'icons', icon: 'world' %}</div>
     <div class="dropup-content">
         {% for locale in shop.published_locales %}
             <a href="#" id="localeItem" lang="{{ locale.iso_code }}">{{ locale.endonym_name }}</a>
