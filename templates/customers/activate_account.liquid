@@ -1,9 +1,9 @@
 <div class="container my-5">
     <h1 class="lead text-center m-3 pb-3">Activate Account</h1>
-    <div class="activate_account">
+    <div class="activate-account">
         <div class="row">
             {% form 'activate_customer_password' %}
-                {% include 'form-error', form %}
+                {% include 'form-error', form: form %}
                 <div class="col-12 mb-4">
                     <label for="activate_password1" class="form-label">Password</label>
                     <input class="form-control" type="password" name="customer[password]" id="activate_password1">

@@ -1,7 +1,7 @@
 <div class="container my-5">
     <h1 class="lead">My Addresses</h1>
 
-    <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#newAddressModal" style="background-color: #247b7b; border-color: #247b7b;">Create new address</button>
+    <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#newAddressModal">Create new address</button>
     <div class="row row-cols-md-4 row-cols-1 my-5 gx-2">
         {% for address in customer.addresses %}
             <div class="col">
@@ -74,7 +74,7 @@
                     </div>
                 </div>
                 <div class="modal-footer">
-                    <button type="submit" class="btn btn-primary" style="background-color: #247b7b; border-color: #247b7b;">Create Address</button>
+                    <button type="submit" class="btn btn-primary">Create Address</button>
                 </div>
             </div>
         </div>

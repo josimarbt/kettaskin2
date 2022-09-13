@@ -1,0 +1,22 @@
+{
+    "general": {
+      "404": {
+        "title": "Pas Trouvé",
+        "subtext_html": "La page que vous recherchez n'existe pas"
+      },
+      "Layout": {
+        "account_text": "Compte",
+        "login_text": "Connexion",
+        "register_text": "S'inscrire",
+        "logout_text": "Se déconnecter"
+      },
+      "Navbar": {
+        "li_home_text": "Maison",
+        "li_catalog_text": "Catalogue",
+        "li_contact_text": "Contact",
+        "li_about-us_text": "À propos de nous",
+        "li_blog_text": "Blog",
+        "li_cart_text": "Chariot"
+      }
+    }
+  }  

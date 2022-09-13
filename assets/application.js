@@ -30,3 +30,30 @@ if( document.getElementById('AddressCountryNew') != null ) {
         provinceSelector.innerHTML = options;
     });
 }
+
+//este codigo es para mostrar el form en la pantalla cada vez que el usuario haga click en forgot password.
+if(document.getElementById("forgotPassword") != null) {
+    document.getElementById("forgotPassword").addEventListener('click', function(e) {
+        const element = document.querySelector("#forgot_password_form")
+        
+        if(element.classList.contains("d-none")){
+            element.classList.remove("d-none")
+            element.classList.add("d-block")
+        }
+    })
+}
+
+/* este code es para seleccionar el idioma de la pagina mediante a los links de las opciones de idioma
+que se muestran, lo hacemos mandando el codigo iso al localization para que este a su vez
+traduzca la pagina. Primero tenemos que hacer dinamicos los links para que manden como valor al input
+los codigos iso y luego poder enviar el form con estos codigos. */
+
+const localeItems = document.querySelectorAll('#localeItem')
+if(localeItems.length > 0) {
+    localeItems.forEach(item => {
+        item.addEventListener('click', event => {
+            document.getElementById('localeCode').value = item.getAttribute('lang')
+            document.getElementById('localization_form_tag').submit()
+        })
+    })
+} 

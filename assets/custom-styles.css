@@ -2,7 +2,9 @@
   position: relative;
   overflow: hidden;
   width: 100%;
-  height: 400px; }
+  height: 300px;
+  display: flex;
+  align-items: center; }
 
 .inner-hero-section img,
 .inner-hero-section svg {
@@ -10,16 +12,74 @@
   top: 0;
   bottom: 0; 
   width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: top;
   z-index: -1; }
 
-.login-form {
+.login-form, .forgot-password-form,
+.activate-account, .reset-password {
   width: 100%;
   max-width: 330px;
   margin: auto;
 }
 
-.activate_account {
-  width: 100%;
-  max-width: 330px;
-  margin: auto;
+.btn-primary {
+  background-color: #247b7b; 
+  border:#247b7b;
+}
+
+.dropup {
+  position: relative;
+  display: inline-block;
+}
+
+.localeBtn {
+  background: aliceblue;
+  color: aliceblue;
+  font-size: 20px;
+  position: fixed;
+  bottom: 25px;
+  right: 25px;
+  width: auto;
+  height: auto;
+  box-shadow: -1px 0px 20px 0px #4d4d4d33;
+  border-radius: 50%;
+}
+
+.localeBtn img {
+  width: 70px;
+  height: 40px;
+}
+
+.dropup-content {
+  display: none;
+  position: fixed;
+  bottom: 66px;
+  right: 25px;
+  min-width: 120px;
+  z-index: 1;
+  background: aliceblue;
+  box-shadow: -1px 0px 20px 0px #4d4d4d33;
+}
+
+.dropup:hover .dropup-content {
+  display: block;
+}
+
+.dropup-content a {
+  color: black;
+  font-size: 17px;
+  padding: 5px;
+  display: block;
+  text-align: center;
+}
+
+#shopify-section-translation {
+  position: fixed;
+}
+
+.featured-collection-section .card,
+.product-collection .card {
+  z-index: -1;
 }

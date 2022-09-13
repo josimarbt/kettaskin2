@@ -8,7 +8,19 @@
             <label for="password">Password</label>
             <input type="password" name="customer[password]" class="form-control mb-3">
 
-            <input type="submit" value="Sign In" class="btn btn-primary btn-lg w-100" style="background-color: #247b7b; border:#247b7b;">
+            <input type="submit" value="Sign In" class="btn btn-primary btn-lg w-100 mb-3">
+        {% endform %}
+        <a href="#recover" id="forgotPassword" class="text-center">Forgot your password?</a>
+    </div>
+    <div  id="forgot_password_form" class="forgot-password-form d-none mt-5">
+        {% form 'recover_customer_password' %}
+         {% include 'form-error', form: form %}
+         <div class="col-12">
+            <label for="resetPassword" class="form-label">Email Address</label>
+            <input type="email" name="email" id="resetPassword" class="form-control">
+         </div>
+
+         <input type="submit" value="Reset Password" class="btn btn-secondary mt-3">
         {% endform %}
     </div>
 </div>

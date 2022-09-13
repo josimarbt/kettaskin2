@@ -7,9 +7,9 @@
          {{ 'lifestyle-' | append: current | placeholder_svg_tag : 'placeholder-svg' }}
     {% endif %}
 
-    <div class="container py-5">
+    <div class="container py-5 py-md-5">
         <div class="row">
-            <div class="col-lg-6 col-md-8 mx-auto">
+            <div class="col-lg-6 col-md-8 mx-4">
                 <h1>{{ section.settings.title }}</h1>
                 {{ section.settings.description }}
                 <a href="{{ section.settings.button_link }}" class="btn btn-secondary">{{ section.settings.button_label }}</a>
