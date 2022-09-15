@@ -57,3 +57,70 @@ if(localeItems.length > 0) {
         })
     })
 } 
+
+/**This code allow us to show a flotant modal when we clicked on our product cards inside our 
+ * collection templates.
+ * luego con el fetch estamos utilizando la api de ajax para obtener la informacion de los 
+ * productos directo desde el server.
+ */
+
+let productInfoAnchors = document.querySelectorAll('#productInfoAnchor')
+let productModal = new bootstrap.Modal(document.getElementById('productInfoModal'), {})
+
+if(productInfoAnchors.length > 0) {
+    productInfoAnchors.forEach(item => {
+        item.addEventListener('click', event => {
+            let url = '/products/' + item.getAttribute('product-handle') + '.js'
+
+            fetch(url)
+            .then((resp) => resp.json())
+            .then(function(data) {
+                console.log(data)
+
+                document.getElementById('productInfoImg').src = data.images[0]
+                document.getElementById('productInfoTitle').innerHTML = data.title
+                document.getElementById('productInfoPrice').innerHTML = item.getAttribute('product-price')
+                document.getElementById('productInfoDescription').innerHTML = data.description
+
+                let variants = data.variants
+                let variantSelect = document.getElementById('modalItemID')
+
+                variants.forEach(function(variant, index){
+                    variantSelect.options[variantSelect.options.length] = new Option(variant.option1, variant.id)
+                })
+
+                productModal.show()
+            })
+        })
+    })
+}
+
+/**Este codigo es para enviar el form del producto al carrito y usamos el e.preventdefault para que
+ * no nos mande a otra pagina.
+ */
+let modalAddToCartForm = document.querySelector('#addToCartForm')
+
+modalAddToCartForm.addEventListener('submit', function(e) {
+    e.preventDefault()
+
+    let formData = {
+        'items': [
+            {
+                'id': document.getElementById('modalItemID').value,
+                'quantity': document.getElementById('modalItemQuantity').value
+            }
+        ]
+    }
+
+    fetch('/cart/add.js', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(formData)
+    })
+    .then((resp) => resp.json())
+    .catch((err) => {
+        console.error('Error: ' + err)
+    })
+})
