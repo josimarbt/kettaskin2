@@ -1,5 +1,7 @@
 {
   "current": {
+    "header_text_font": "arimo_n4",
+    "body_text_font": "catamaran_n4",
     "sections": {
       "header": {
         "type": "header",
@@ -63,7 +65,13 @@
           "9a3b9f09-a447-4e93-a9f4-aac30e06f72b"
         ],
         "settings": {
-          "col_num": 4
+          "col_num": 4,
+          "enable_payment_type_icons": true
+        }
+      },
+      "translation": {
+        "type": "translation",
+        "settings": {
         }
       }
     },
