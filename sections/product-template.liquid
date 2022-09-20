@@ -15,7 +15,22 @@
 
       {% form 'product', product, class:"product-form", id:"AddToCartForm" %}
          <div class="mb-3">
+          {% if variant.length != 1 %}
             <select name="id" class="form-select" id="productSelect"> 
+              {% for variant in product.variants %} 
+                    {% if variant.available %}
+                        <option value="{{ variant.id }}">
+                          {{ variant.title }}
+                        </option>
+                      {% else %}
+                        <option value="{{ variant.id }}" disabled="disabled">
+                          {{ variant.title }} 
+                        </option>
+                    {% endif %}
+              {% endfor %}
+            </select>
+          {% else %}
+            <select name="id" class="form-select" id="productSelect" hidden="true"> 
               {% for variant in product.variants %}
                     {% if variant.available %}
                         <option value="{{ variant.id }}">
@@ -28,6 +43,7 @@
                     {% endif %}
               {% endfor %}
             </select>
+          {% endif %}
          </div>
          <div class="mb-3">
             <input type="number" name="quantity" class="form-control" id="Quantity" value="1" min="1">
@@ -42,6 +58,45 @@
     </div>
   </div>
 </div>
+
+<!-- Este codigo es para ingresar los productos recomendados. -->
+<div class="container">
+  <section id="product_recommendation" class="row content-justify-center my-5">
+    <div class="text-center"><h1>You may also like this</h1></div>
+    <div id="product_recommendation_body">
+
+    </div>
+  </section>
+</div>
+
+<script>
+  let productRecommendationBody = document.getElementById('product_recommendation_body')
+
+  fetch('/recommendations/products.json?product_id={{ product.id }}')
+  .then(resp => resp.json())
+  .then(({ products }) => {
+    console.log(products)
+
+    if(products.length > 0) {
+      products.forEach(function(product, index) {
+        let card;
+
+        card = '<div class="col-3 g-2">';
+        card += '<div class="card" style="width: 18rem;">';
+        
+        if(product.images.length > 0) {
+          card += '<img class="card-img-top" src="' + product.images[0] + '">'
+        }
+
+        card += '<div class="card-body">';
+        card += '<h3><a href="'+ product.url +'">' + product.title + '</a></h3>'
+        card += '</div></div></div>';
+
+        productRecommendationBody.innerHTML += card;
+      })
+    }
+  })
+</script>
 
 {% schema %}
 {

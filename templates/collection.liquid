@@ -20,20 +20,20 @@
       {% for product in collection.products %}
         {% assign image = product.featured_media.preview_image %}
         <div class="col g-3 px-4">
-            <div class="card">
-              {% if image != blank %}
-                <a href="#" id="productInfoAnchor" product-handle="{{ product.handle }}" product-price="{{ product.price | money }}">
-                  <img class="card-img-top" src="{{ image | img_url: 'master' }}" alt="{{ product.title }}">
-                </a>
-              {% else %}
-                {{ 'product-1' | placeholder_svg_tag: 'card-img-top' }}
-              {% endif %}
-            
-              <div class="card-body">
-                <h3><a href="{{ product.url }}">{{ product.title }}</a></h3>
-                <p>{{ product.price | money_with_currency }}</p>
-              </div>
-            </div> 
+          <div class="card">
+            {% if image != blank %}
+              <a href="#" id="productInfoAnchor" product-handle="{{ product.handle }}" product-price="{{ product.price | money }}">
+                <img class="card-img-top" src="{{ image | img_url: 'master' }}" alt="{{ product.title }}">
+              </a>
+            {% else %}
+              {{ 'product-1' | placeholder_svg_tag: 'card-img-top' }}
+            {% endif %}
+          
+            <div class="card-body">
+              <h3><a href="{{ product.url }}">{{ product.title }}</a></h3>
+              <p>{{ product.price | money_with_currency }}</p>
+            </div>
+          </div> 
         </div>
       {% else %}
         <p>no matches</p>
