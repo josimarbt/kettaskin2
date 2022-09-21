@@ -162,3 +162,56 @@ function update_cart() {
     })
     .catch((err) => console.error(err))
 }
+
+let predictiveSearchInput = document.getElementById('searchInputField')
+let timer
+
+let offCanvasSearch = document.getElementById('offcanvasSearchResult')
+let bsOffCanvas = new bootstrap.Offcanvas(offCanvasSearch)
+
+/**Utilizamos el timer para que no mande tantas solicitudes a la api, sino que las mande luego
+ * de un lapso de tiempo estimado y no en cada letra que escribimos para la busqueda 
+ * predictiva de productos.
+ */
+
+if(predictiveSearchInput != null) {
+    predictiveSearchInput.addEventListener('input', function(e) {
+        clearTimeout(timer)
+
+        if(predictiveSearchInput.value){
+            timer = setTimeout(fetchPredictiveSearch, 2000)
+        }
+    })
+}
+
+/**Este codigo es para realizar una busqueda predictiva de los productos con la Api de ajax
+ * en la busqueda de la pagina principal.
+ */
+
+function fetchPredictiveSearch() {
+    fetch(`/search/suggest.json?q=${predictiveSearchInput.value}&resources[type]=product`)
+    .then(resp => resp.json())
+    .then(data => {
+        console.log(data)
+
+        let products = data.resources.results.products
+        document.getElementById('search_results_body').innerHTML = ''
+
+        /**Este codigo es para por cada producto de la busqueda predictiva crear un card
+         * y luego mostrar el offcanvas en la pagina mediante el fetch.
+         */
+        products.forEach(function(product, index){
+            document.getElementById('search_results_body').innerHTML += `
+            <div class="card" style="width: 19rem;">
+                <img src="${product.image}" class="card-img-top">
+                <div class="card-body">
+                    <h5 class="card-title">${product.title}</h5>
+                    <p class="card-text">$${product.price}</p>
+                </div>
+            </div>
+            `
+        })
+
+        bsOffCanvas.show()
+    })
+}
