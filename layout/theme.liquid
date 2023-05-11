@@ -11,6 +11,7 @@
   {{ 'custom-styles.css' | asset_url | stylesheet_tag }}
   {{ 'bootstrap.min.css' | asset_url | stylesheet_tag }}
   {{ 'font-styles.css' | asset_url | stylesheet_tag }}
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js" async></script>
 </head>
 <body>
 
@@ -18,12 +19,15 @@
 
   <main role="main">
     {{ content_for_layout }}
+    <div ng-app="">
+      <p>Name: <input type="text" ng-model="name"></p>
+      <p ng-bind="name"></p>
+    </div>
   </main>
 
   {% section 'translation' %}
 
   {% section 'footer-section' %}
-  
-  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js" async></script>
+
 </body>
 </html>
