@@ -15,14 +15,15 @@
 <body>
 
   {% section 'header' %}
-  <iframe id="inlineFrameExample"
+
+
+  <main role="main">
+    {{ content_for_layout }}
+      <iframe id="inlineFrameExample"
     title="Inline Frame Example"
     allow="fullscreen"
     src="https://www.openstreetmap.org/export/embed.html?bbox=-0.004017949104309083%2C51.47612752641776%2C0.00030577182769775396%2C51.478569861898606&layer=mapnik">
 </iframe>
-
-  <main role="main">
-    {{ content_for_layout }}
     <div ng-app="">
       <p>Name: <input type="text" ng-model="name"></p>
       <p ng-bind="name"></p>
