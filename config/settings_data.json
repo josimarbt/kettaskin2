@@ -80,7 +80,7 @@
 
         ],
         "settings": {
-          "liquid": "<iframe width=\"100%\" height=\"1000px\" src=\"\/\/ivl-scheduler.herokuapp.com?igu=1\" sandbox=\"allow-same-origin allow-scripts allow-popups-to-escape-sandbox\">\n<\/iframe>",
+          "liquid": "<iframe width=\"100%\" height=\"1000px\" src=\"https:\/\/ivl-scheduler.herokuapp.com\" sandbox=\"allow-same-origin allow-scripts allow-popups-to-escape-sandbox\">\n<\/iframe>",
           "section_padding": "both"
         }
       }
