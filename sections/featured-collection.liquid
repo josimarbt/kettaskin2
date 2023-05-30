@@ -24,14 +24,14 @@
 <iframe src="http://ivl-scheduler.herokuapp.com/" id="Iframe"></iframe>
 
 <script>
-    var frame = document.getElementById("Iframe");
+	let iframe = document.querySelector("#Iframe");
 
-    frame.onload = fixHeight();
-    function fixHeight(){
-     frame.style.height = frame.scrollHeight + 'px';
-     frame.style.width = frame.scrollWidth + 'px';
-     console.log(frame);    
-    }
+	iframe.addEventListener('load', function() {
+		setInterval(function() {
+			iframe.style.height = iframe.contentDocument.body.scrollHeight + 'px';
+			iframe.style.width = iframe.contentDocument.body.scrollWidth + 'px';
+		}, 500);
+	});	
 </script>
 
 {% schema %}
