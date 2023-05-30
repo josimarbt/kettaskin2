@@ -23,11 +23,12 @@
 </section>
 <iframe src="http://ivl-scheduler.herokuapp.com/" id="myiframe"></iframe>
 
-<script>
-   var iframe = document.getElementById("myiframe");
-   iframe.width = iframe.contentWindow.document.body.scrollWidth;
-   iframe.height = iframe.contentWindow.document.body.scrollHeight;
-</script>
+<style>
+  #myiframe{
+    width:100%;
+    height:100%;
+  }
+</style>
 
 {% schema %}
 {
