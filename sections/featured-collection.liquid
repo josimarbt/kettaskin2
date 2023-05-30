@@ -21,17 +21,11 @@
       {% endfor %}
    </div>
 </section>
-<iframe src="http://ivl-scheduler.herokuapp.com/" id="Iframe" width="100%;"></iframe>
+<div class="app">
+  <iframe src="http://ivl-scheduler.herokuapp.com/" id="Iframe" width="100%;"></iframe>
+</div>
 
-    <script>
-    // Selecting the iframe element
-    var iframe = document.getElementById("Iframe");
-    
-    // Adjusting the iframe height onload event
-    iframe.onload = function(){
-        iframe.style.height = iframe.contentWindow.document.body.scrollHeight + 'px';
-    }
-    </script>
+
 
 {% schema %}
 {
