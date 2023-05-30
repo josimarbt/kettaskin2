@@ -26,12 +26,13 @@
 <script>
 	let iframe = document.querySelector("#Iframe");
 
-	iframe.addEventListener('load', function() {
-		setInterval(function() {
-			iframe.style.height = iframe.scrollHeight + 'px';
-			iframe.style.width = iframe.scrollWidth + 'px';
-		}, 500);
-	});	
+	window.addEventListener('message', function(e) {
+		// message that was passed from iframe page
+		let message = e.data;
+
+		iframe.style.height = message.height + 'px';
+		iframe.style.width = message.width + 'px';
+	} , false);
 </script>
 
 {% schema %}
