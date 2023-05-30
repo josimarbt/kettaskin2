@@ -28,7 +28,7 @@
 
     frame.onload = fixHeight();
     function fixHeight(){
-     frame.style.height = frame.contentWindow.document.body.scrollHeight + 'px';
+     frame.style.height = frame.contentWindow.document.body.scrollHeight + 'px!important';
      frame.style.width = frame.contentWindow.document.body.scrollWidth + 'px';
      console.log(frame);    
     }
