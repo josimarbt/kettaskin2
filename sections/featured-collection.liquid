@@ -21,15 +21,15 @@
       {% endfor %}
    </div>
 </section>
-<iframe src="http://ivl-scheduler.herokuapp.com/" id="Iframe" width="100%"></iframe>
+<iframe src="http://ivl-scheduler.herokuapp.com/" id="Iframe"></iframe>
 
 <script>
     var frame = document.getElementById("Iframe");
 
     frame.onload = fixHeight();
     function fixHeight(){
-     frame.style.height = frame.scrollHeight + 'px';
-     frame.style.width = frame.scrollWidth + 'px';
+     frame.style.height = frame.scrollHeight + 'px!important';
+     frame.style.width = frame.scrollWidth + 'px!important';
      console.log(frame);    
     }
 </script>
