@@ -28,8 +28,8 @@
 
 	iframe.addEventListener('load', function() {
 		setInterval(function() {
-			iframe.style.height = iframe.contentDocument.body.scrollHeight + 'px';
-			iframe.style.width = iframe.contentDocument.body.scrollWidth + 'px';
+			iframe.style.height = iframe.contentDocument.scrollHeight + 'px';
+			iframe.style.width = iframe.contentDocument.scrollWidth + 'px';
 		}, 500);
 	});	
 </script>
