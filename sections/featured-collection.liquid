@@ -29,11 +29,11 @@
   function resizeIframe() {
     var iframe = document.getElementById('my-iframe');
 
-    iframe.contentWindow.postMessage('getIframeHeight', '*');
+    iframe.contentWindow.top.postMessage('getIframeHeight', '//ivl-scheduler.herokuapp.com/');
   }
 
   window.addEventListener('message', function(event) {
-    if(event.origin === '*') {
+    if(event.origin === '//ivl-scheduler.herokuapp.com/') {
       var iframe = document.getElementById('my-iframe');
       var height = parseInt(event.data);
 
