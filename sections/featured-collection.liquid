@@ -29,15 +29,15 @@
   function resizeIframe() {
     var iframe = document.getElementById('my-iframe');
 
-    iframe.contentWindow.top.postMessage('getIframeHeight', 'http://ivl-scheduler.herokuapp.com/');
+    iframe.contentWindow.top.postMessage('getIframeHeight', '*');
   }
 
   window.addEventListener('message', function(event) {
-    if(event.origin === 'http://ivl-scheduler.herokuapp.com/') {
+    if(event.origin === '*') {
       var iframe = document.getElementById('my-iframe');
       var height = parseInt(event.data);
 
-      iframe.style.height = height + 'px!important';
+      iframe.style.height = height + 'px';
     }
   });
 </script>
