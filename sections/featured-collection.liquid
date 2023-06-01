@@ -44,7 +44,7 @@
   // listen for messages sent from the parent iframe
   
   window.addEventListener('message', function(event) {
-    if(event.origin === 'https://ketta-store.myshopify.com/') && event.data === 'getIframeHeight') {
+    if(event.origin === 'https://ketta-store.myshopify.com/' && event.data === 'getIframeHeight') {
       var height = document.body.scrollHeight;
 
       parent.postMessage(height, 'https://ketta-store.myshopify.com/');
