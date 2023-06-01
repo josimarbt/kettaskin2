@@ -29,7 +29,7 @@
   function resizeIframe() {
     var iframe = document.getElementById('my-iframe');
 
-    iframe.contentWindow.top.postMessage('getIframeHeight', '*');
+    iframe.contentWindow.postMessage('getIframeHeight', '*');
   }
 
   window.addEventListener('message', function(event) {
