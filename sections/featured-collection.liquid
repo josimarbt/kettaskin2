@@ -22,25 +22,8 @@
    </div>
 </section>
   <div class="iframe-container">
-    <iframe id="my-iframe" src="http://ivl-scheduler.herokuapp.com/" sandbox="allow-scripts"></iframe>
+    <iframe id="my-iframe" src="http://ivl-scheduler.herokuapp.com/"></iframe>
   </div>
-
-<!-- <script>
-  function resizeIframe() {
-    var iframe = document.getElementById('my-iframe');
-
-    iframe.contentWindow.postMessage('getIframeHeight', '//ivl-scheduler.herokuapp.com/');
-  }
-
-  window.addEventListener('message', function(event) {
-    if(event.origin === '//ivl-scheduler.herokuapp.com/') {
-      var iframe = document.getElementById('my-iframe');
-      var height = parseInt(event.data);
-
-      iframe.style.height = height + 'px';
-    }
-  });
-</script> -->
 
 <style>
   .iframe-container {
